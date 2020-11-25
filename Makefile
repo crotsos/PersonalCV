@@ -1,12 +1,12 @@
 # The name of the main .tex file to build.
 # Other files can be included into this one.
-DOCUMENT = leonardo_uieda_cv
+DOCUMENT = crotsos_cv
 OUTPUT = output
 PDF = $(OUTPUT)/$(DOCUMENT).pdf
 
 LATEX_FLAGS = -halt-on-error -output-directory $(OUTPUT)/
 LATEX = xelatex
-PDFVIEWER = xdg-open
+PDFVIEWER = open
 
 # File Types (for dependencies)
 TEX = $(wildcard *.tex)
