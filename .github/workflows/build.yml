@@ -11,8 +11,17 @@ jobs:
         with:
           root_file: crotsos_cv.tex
           latexmk_use_lualatex: true
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+      - name: Make output dir
+        run: |
+          mkdir output
+          touch output/.nojekyll
+          cp *.pdf output/
+      - name: Push to gh-pages
+        if: success() && github.event_name == 'push'
+        # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
+        uses: peaceiris/actions-gh-pages@bbdfb200618d235585ad98e965f4aafc39b4c501
         with:
-          files: crotsos_cv.pdf
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
