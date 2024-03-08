@@ -6,12 +6,14 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[11pt, a4paper]{article}
+\documentclass[10pt, a4paper]{article}
+
+\usepackage{xspace}
 
 % Useful aliases
 \newcommand{\LUSCC}{School of Computer and Communications}
 \newcommand{\LUFST}{Faculty of Science and Technology }
-\newcommand{\LU}{Lancaaster University}
+\newcommand{\LU}{Lancaster University}
 \newcommand{\UOCCL}{Computer Laboratory}
 \newcommand{\UOC}{University of Cambridge}
 
@@ -21,13 +23,13 @@
 \newcommand{\LastName}{Rotsos}
 \newcommand{\Initials}{C}
 \newcommand{\MyName}{\FirstName\ \LastName}
-\newcommand{\Me}{\textbf{\LastName, \Initials}}  % For citations
+\newcommand{\Me}{\textbf{\Initials.~\xspace\LastName}}  % For citations
 \newcommand{\Email}{c.rotsos@lancaster.ac.uk}
-\newcommand{\Website}{lancaster.ac.uk/staff/rotsos/}
+\newcommand{\Website}{crotsos.github.io}
 \newcommand{\Lab}{lancaster.ac.uk/scc/research/networking/}
 \newcommand{\ORCID}{0000-0003-0252-9373}
 \newcommand{\Affiliation}{\LUSCC \\ \LUFST \\ \LU}
-\newcommand{\Address}{ InfoLab21 \\ Lancaster University \\ Lancaster, LA1 4WA }
+\newcommand{\Address}{ InfoLab21}
 
 % Template configuration
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -58,6 +60,14 @@
 \end{tabularx}
 }
 
+\usepackage{environ}
+\NewEnviron{EntriesList}{
+\TablePad
+\begin{tabularx}{\textwidth}{@{}p{\textwidth}@{}}
+  \BODY
+\end{tabularx}
+}
+
 % Macros to add links
 \newcommand{\DOI}[1]{doi:\href{https://doi.org/#1}{#1}}
 \newcommand{\Preprint}[1]{preprint: \href{https://doi.org/#1}{doi.org/#1}}
@@ -75,7 +85,7 @@
 \newcommand{\Future}{future}
 \newcommand{\Review}{in review}
 \newcommand{\Accepted}{accepted}
-\newcommand{\Appointment}[3]{\textbf{#1} \newline #2 \newline #3 }
+\newcommand{\Appointment}[3]{\textbf{#1} \newline #2, #3 \newline}
 
 % Define command to insert month name and year as date
 \usepackage{datetime}
@@ -170,46 +180,60 @@
     \\
     email: \href{mailto:\Email}{\Email}
     \\
-    Research group: \href{https://www.\Lab}{\Lab}
-    \\
     Website: \href{https://www.\Website}{\Website}
   \end{flushright}
 \end{minipage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Professional Appointments}
+\section{General Information}
+\subsection{Professional Appointments}
 
 \begin{EntriesTable}
   \Duration{2017}{}  &
   \Appointment{Lecturer}{\LUSCC}{\LU, UK}
+{\it SCC.150,SCC.365 module convenor, EPSRC Initiate, Toucan, NG-CDI project Co-I, Part-I tutor.}
   \\
   \Duration{2015}{2017}  &
-  \Appointment{Senior Research Associate}{\LUSCC}{\LU, UK}
+  \Appointment{Senior Research Associate -- EPSRC TOUCAN}{\LUSCC}{\LU, UK}
+{\it Design and implement a technology-agnostic 5G network orchestration architecture.}
   \\
   \Duration{2013}{2015}  &
-    \Appointment{Research Associate}{\UOCCL}{\UOC, UK}
+    \Appointment{Research Associate -- DARPA (MRC)2}{\UOCCL}{\UOC, UK}
+{\it Port the Mirage OS framework to the CHERI CPU architecture.}
     \\
-    \Year{2016} &
-    \Appointment{Research Intern}{Stanford Research Institute}{US}
+    \Year{2013} &
+\Appointment{Research Intern -- DARPA (MRC)2}{Computer Science
+Laboratory}{Stanford Research Institute, US}
+{\it Develop a hybrid experimentation platform for cloud networks.}
     \\
     \Year{2011} &
-    \Appointment{Research Intent}{Horizon Institute}{Nonttingham University, UK}
+    \Appointment{Research Intent -- EPRSRC Homework}{Horizon Institute}{Nottingham University, UK}
+{\it Design a user-friendly home router architecture.}
     \\
     \Year{2010} &
-    \Appointment{Research Intern}{Deutche Telekom}{Technical University Berlin, Germany}
+\Appointment{Research Intern -- EU Ofelia}{Deutche Telekom}{Technical University
+Berlin, Germany}
+{\it Design a performance characterisation platform for OpenFlow devices.}
     \\
     \Duration{2007}{2009} &
-    \Appointment{Research Assistant}{Department of Informatics and
+    \Appointment{Research Assistant -- EU SKIER}{Department of Informatics and
     communications}{University of Athens}
+    {\it Develop an IoT wildfire detection platform using image processing.}
 \end{EntriesTable}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Education}
+\subsection{Education}
 
 \begin{EntriesTable}
+\Duration{2018}{2019} & \textbf{PGCAP, Lancaster University, UK} \newline
+Thesis: ``Improving gender equity in CS programs; towards an
+inclusive SCC curriculum''
+\\
   \Duration{2009}{2014}  &
-  \textbf{PhD in Computer Science, University of Cambridge, UK}
+  \textbf{PhD in Computer Science, University of Cambridge, UK} \newline
+  Thesis: ``Scalable and Extensible Networks
+with Software Defined Networking''
   \\
   \Duration{2006}{2007}  &
   \textbf{MSc in Data Communications, Networks and Distributed Systems, UCL, UK}
@@ -218,103 +242,302 @@
   \textbf{BSc in Computer Science, University of Piraeus, Greece}
 \end{EntriesTable}
 
+\section{Research}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Grants \& Fellowships}
+% I am a member of the SCC networking group, a research group with more than 30 years of
+% international reputation on programmable and resilient networked
+% systems and multimedia delivery research. I joined the group in 2017 as a lecturer,   
+% supporting Prof. D. Hutchison to manage major national research projects, while
+% being a member of the 2021 REF panels and preparing for his recent retirement.
+% My  research is predominantly experimental, involving testbed-based
+% system design, implementation, evaluation and application, and targets
+% real-world impact, through industry collaborations and standards
+% specifications.
+
+% My research  improve the efficiency and resilience of Future
+% Internet infrastructures.  With my work I aim to combine the design of network
+% algorithms
+% models and architectures with the development of prototype systems and testbeds,
+% and produce research outcomes that cover levels 1-3 in the TRL scale. In
+% parallel, through collaborations with major international industrial partners and standardization
+% bodies, I frequently downstream my research in real world system designs and
+% network standards. My research efforts contribute to the ongoing international
+% recognition of the Lancaster networking group as an expert on network
+% management.
+
+Communication networks play a vital role in our daily social lives and economic
+activity, morphing into a national critical infrastructure. I develop
+algorithms, prototype systems and architectures that improve the operational
+efficiency and resilience of modern communication infrastructures and
+enable the delivery of Future Internet services. My research expertise spans
+across all network layers, from hardware design to
+application, and allows me to develop systems that offer holistic optimization
+mechanisms. In parallel, I research novel autonomic management mechanisms that
+simplify network configuration, reduce operational cost and
+improve overall energy efficiency in network infrastructures. 
+
+I am a member of the SCC networking group, a research group with more than 30 years of
+international reputation on programmable and resilient networked
+systems and multimedia delivery research. My work
+enriches the existing network management research agenda with new expertise on
+network service orchestration for next generation mobile network
+technologies (5G, 6G), a priority research area of national and international
+funding bodies, like EPSRC, DCMS and H2020. I have an extensive research
+leadership portfolio, leading research activities in three EPSRC research
+projects, positions I acquired by
+supporting Prof. D. Hutchison to manage his research portfolio, while stepping
+down from his role and joining the 2021 REF panel. In
+parallel, I collaborate with several national (BT, BBC) and international (NEC,
+Ericsson) network vendors and operators, leading effective knowledge transfer
+projects that downstream research into production and standards. 
+
+\subsection{Research Projects}
 
 \begin{EntriesTable}
-    \Year{2019} &
-    H2020: ``Nestor`` (Not funded).
-    Amount: £650000
-    PI: D. Hutchison, \textbf{Co-I}: C. Rotsos, A. Marnerides.
-    \textit{\LU}
-    \\
-    \Year{2018} &
-    H2020 Fed4Fire+ Open Call: ``LEMNOS`` (Not funded).
-    Amount: £40000.
-    \textbf{PI}: \Me, Co-I: A. Farshad.
-    \textit{\LU}
+    \Duration{2019}{2022} &
+EPSRC ``Next Generation Converged Digital infrastructure (NG-CDI)'', (Amount:
+£2.5M, LU: £950k), PI: N. Race, Co-I: {\bf C. Rotsos},
+ {\it Manage: M. Bezahaf, W. Fantom, B. Simms, E. Davies}. \newline
+This EPSRC prosperity partnership, in collaboration with BT, develops
+technologies that enable 
+automated and autonomic management of production network infrastructures. I lead the
+research efforts of a team of researchers between Lancaster, Surrey and
+Cambridge developing mechanisms for autonomous network management and testing.
+The project develops prototype systems that
+improve the operational resilience and efficiency (energy, cost) in BT infrastructures. 
+ \\
+    \Duration{2017}{2020} &
+    EPSRC ``The UK Programmable Fixed and Mobile Internet Infrastructure
+    (INITIATE)'',  (Amount: £1.6M, LU: £400k), PI: D. Hutchison, Co-I: \Me. Manage: S. Simpson, P. Mccherry. \newline
+This EPRSC project developed the first open 5G experimentation testbed between
+four UK universities (Lancaster, Bristol, KCL, Edinburgh). I coordinated teams
+between Lancaster, Edinburgh, KCL, and Bristol in
+developing a production network orchestration platform. The 
+testbed was used by several UK-based SMEs and academic groups to evaluate 5G technologies and use-cases.\\
+    
+    \Duration{2015}{2021} &
+EPSRC ``Towards Ultimate Convergence (TOUCAN)'', (Amount: £5.9M, LU: £800k), PI: D.
+Hutchison, Co-I: \Me, {\it Manage: A. Magzub, L. Hill, A. Farshad}.\newline
+This EPSRC project developed technology-agnostic 
+convergence mechanisms for future network infrastructures (optical, wireless, visible
+light, mobile, compute). I coordinated research teams between
+Lancaster, Edinburgh and Bristol, in developing an intelligent service orchestration
+platform. Our research efforts developed fundamental research on network modeling
+and programmability, essential for the development for 5G technologies. 
+\end{EntriesTable}
+
+
+\subsection{Research Proposals}
+
+\begin{EntriesTable}
+    \Year{2022} &
+EPSRC future communications systems early-stage federated hub call: ``Pantheon'' [Under Review].
+    (Amount: £ 2m - LU: £50k) Co-I: N. Race, \textbf{C. Rotsos}. \newline
+This EPSRC project proposal will create a multi-university research hub on the
+topic of Network of Networks. I will lead a work package on mobile network management and
+orchestration, in collaboration with UEA, QUB and UCL.
+The research will organize several funding calls for small research projects and
+contribute to shaping UK's roadmap towards 6G mobile systems.\\
+~ & EPSRC future communications systems early-stage federated hub call: ``IncludeHUB'' [Under Review].
+    (Amount: £ 2m - LU: £50k) Co-I: N. Race, \textbf{C. Rotsos}. \newline
+This EPSRC project proposal will create a multi-university research hub on the
+topic of cloud and distributed systems. I will lead a work package on 
+cloud-edge continuum management, in collaboration with KCL, Loughborough and
+Glasgow.
+The research will organize several funding calls for small relevant projects and
+develop technologies that enable recent AI advances in
+network management mechanisms.\\
+~ & DCMS Future Open Networks Research Challenge: ``Towards Ubiquitous 3D Open Resilient Network (TUDOR)'' [Under Review].
+    (Amount: £ 12m - LU: £850k ) Co-I: N. Race, \textbf{C. Rotsos}. \newline
+This DCMS project proposal will develop the fundamental research 
+for the next generation of mobile networks (6G). The large project
+consortium (13 partners) includes two major mobile network vendors (Ericsson,
+Nokia), a cloud provider (Amazon) and all major UK mobile operators (BT, O2,
+Vodafone). I will lead the design of the management layer of the project
+and develop mechanisms that converge control across mobile and satellite infrastructures.
     \\
     ~ &
-    H2020 5GinFire Open Call: ``ARCADINS`` (Not funded).
-    AMount: £40000.
-    \textbf{PI}: \Me, M. Broadbent.
-    \textit{\LU}
+    DCMS Future Open Networks Research Challenge: ``Towards Holistic Openness in Future Mobile Networks'' [Under Review].
+    (Amount: £4m - LU: £950k) Co-I: N. Race, \textbf{C. Rotsos}. \newline
+This DCMS project proposal will develop the first national open experimentation
+testbed for 6G mobile technologies. I will lead the design and
+implementation of a management and monitoring services.
+    \\
+    \Year{2019} &
+    H2020: ``Nestor'' [Not funded - Score 14/15].
+    (Amount: £4m, LU: £650k)
+    PI: D. Hutchison, Co-I: C. Rotsos, A. Marnerides.\newline
+This project proposal would develop an ICT framework for the management
+of distributed renewable energy infrastructures.
+Lancaster university lea a work package on security and resilience. 
+    \\
+    \Year{2018} &
+    H2020 Fed4Fire+ Open Call: ``LEMNOS'' [Not funded - Score 48/60].
+    (LU: £40k) PI: \Me, Co-I: A. Farshad.
+This small project proposal would develop mechanisms that integrate emerging
+orchestration mechanisms with Cloud OS technologies.
+    \\
+    ~ &
+    H2020 5GinFire Open Call: ``ARCADINS'' [Not funded - Score 21.5/25].
+    (LU: £40k) PI: \Me, M. Broadbent.
+This small project proposal would develop a monitoring framework using
+lightweight virtualization technologies (Unikernels).
     \\
     \Year{2016} &
-    H2020 MC-ETN: ``5G-Nordic`` (Not funded).
-    Amount: £200000
-    PI: Andreas Mauthe, \textbf{Co-I}: \Me.
-    \textit{\LU}
-\end{EntriesTable}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Awards \& Honors}
-
-\begin{EntriesTable}
-   \Year{2013}  &
-    Best-paper award, ``Unikernels: library operating systems for the cloud``
-    \newline
-    European Network on High Performance and Embedded Architecture and Compilation.
-\end{EntriesTable}
-
+    H2020 MC-ETN: ``5G-Nordic'' [Not funded - Score 86\%].
+    (Amount: £2m, LU: £200K) PI: Andreas Mauthe, Co-I: \Me.
+This H2020 ETN project proposal aimed to develop an inter/multidisciplinary
+training network on 5G technologies.
+Lancaster university led a work package on 5G resilience. 
+ \end{EntriesTable}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Publications}
+\subsection{Selected Papers}
+\begin{EntriesList}
 
-\subsection{Conference \& Journals}
+    R Oudin, G Antichi, C Rotsos, AW Moore, S Uhlig.
+    OFLOPS-SUME and the art of switch characterization.
+\emph{IEEE Journal on Selected Areas in Communications}, 2018, vol. 36, no. 12, pp.
+2612-2620, Impact Factor: 17.01.  \DOI{10.1109/JSAC.2018.2871235} \newline
+The paper summarizes the results of a long-running multi-dimensional study of
+OpenFlow switch implementations. Early results of this work identified
+the challenges to implement the OpenFlow protocol in hardware and influenced
+research efforts on control plane consistency.
+    \\
+W. Fantom, P. Alcock, B. Simms, C. Rotsos and N. Race. A NEAT way to
+test-driven network management, Acceptance Rate: 29.6\%. \emph{2022 IEEE/IFIP NOMS},
+pp. 1-5, \DOI{10.1109/NOMS54207.2022.9789909}. \newline
+NEAT is the first open-source automated testing platform for network DevOps.
+Demos of the system were presented to various BT stakeholders,
+as well as  the TMF AN group SDO. The resulting platform will be used to support
+the 6G digital twin platform for the TUDOR project.
+\\
+    S. Simpson, A. Farshad, P. McCherry, A. Magzoub, W. Fantom, C. Rotsos,
+    N. Race, D. Hutchison.
+    DataPlane Broker: Open WAN control for multi-site service orchestration.
+\emph{2019 IEEE NFV-SDN}, Acceptance rate: 32\%.
+\DOI{10.1109/NFV-SDN47374.2019.9040084} \newline
+The DataPlane Broker was the first open-source WAN platform to support
+point-to-multipoint connectivity. A demo of the platform was accepted as a Proof
+of Concept project by the ETSI NFV Special Interest Group, code of the platform
+has been integrated with the ETSI OSM orchestrator source code and influenced
+revisions in the NFV-MANO model to support multi-cloud service orchestration. 
+    \\
+     J.H. Han, P. Mundkur, C. Rotsos, G. Antichi, N. Dave, A.W. Moore, P.G.  Neumann.
+     Blueswitch: Enabling provably consistent configuration of network switches.
+\emph{ACM/IEEE ANCS}, pp. 17-27, \DOI{10.1109/ANCS.2015.7110117} (Acceptance
+Rate: 28\%, 40 References) \newline
+This paper presents a collaboration between Lancaster University, Stanford
+Research Institute and Cambridge University in developing the first open source
+OpenFlow switch architecture with built-in support for consistent updates with
+strong correctness guarantees. The system influenced the field of network
+programmability and open hardware. The work of this paper helped us to organize
+two successful tutorial sessions in ACM Sigcomm 2015 and IEEE NetSoft 2015.
+     \\
+    C. Rotsos, D. King, A. Farshad, J. Bird, L. Fawcett, N. Georgalas, M. Gunkel, K. Shiomoto, A. Wang, A. Mauthe, N. Race, D. Hutchison.
+    Network service orchestration standardization: A technology survey.
+    \emph{Elsevier Computer Standards \& Interfaces}, vol. 54, no. 4,
+pp. 203-215, 2018, \DOI{10.1016/j.csi.2016.12.006} (Impact Factor: 3.721, 88
+references) \newline
+This is the first survey paper to cover the topic of network service
+orchestration in the field of network management. I collaborated with researchers
+from several major international network operators, including BT,
+Deutche Telekoms, China Telecoms and NTT. The survey strengthened the
+international recognition of the SCC networking group expertise on network
+orchestration and assisted us to join a number of standardization bodies. 
+\end{EntriesList}
+
+\subsection{Conferences \& Journals}
 \begin{EntriesTable}
+\Year{2022} &
+A. Jung, H. Lefeuvre, C. Rotsos, P. Olivier, D.
+Oñoro-Rubio, F. Huici, and M. Niepert. Zero-knowledge OS optimization for cloud
+appliances. \emph{2023 USENIX OSDI.} (under development).
+\\
+~ &
+W. Fantom, E. Davies, C. Rotsos, P. Veitch, S. Cassidy, and N. Race. NES: Towards lifecycle automation for
+emulation-based experimentation. \emph{IEEE NOMS} (under review).
+\\
+~ &
+B. Lewis, M. Broadbent, C. Rotsos and N. Race. 4MIDable: Flexible Network
+Offloading For Security VNFs. \emph{Journal of Network and Systems Management.} (under review).
+\\
+~ &
+P. Alcock, B. Simms, W. Fantom, C. Rotsos and N. Race. Improving Intent
+Correctness with Automated Testing. \emph{2022 IEEE NetSoft}, pp. 61-66, 
+\DOI{10.1109/NetSoft54395.2022.9844054}.
+\\
+~ &
+L. Hill, C. Rotsos, W. Fantom, C. Edwards and D. Hutchison. Improving network resilience with Middlebox Minions. \emph{IEEE/IFIP NOMS}, pp. 1-5, \DOI{10.1109/NOMS54207.2022.9789819}. 
+\OA
+\\
+~ &
+N. Race, I. Eckley, A. Parlikad, C. Rotsos, N. Wang,
+R. Piechocki, P. Stiles, A. Parekh, T. Burbridge, 
+P. Willis,  and S. Cassidy. Industry-Academia Research toward Future
+Network Intelligence: The NG-CDI Prosperity Partnership. \emph{in IEEE
+Network}, vol. 36, no. 1, pp. 18-24, 
+\DOI{10.1109/MNET.001.2100405}.
+\\
+\Year{2021} & 
+A. Jung, H. Lefeuvre, C. Rotsos, P. Olivier, D.
+Oñoro-Rubio, F. Huici, and M. Niepert. Wayfinder: towards
+automatically deriving optimal OS configurations. \emph{ACM
+SIGOPS Asia-Pacific Workshop on Systems.} pp. 115–122. \DOI{10.1145/3476886.3477506}.
+\\
+~ &
+M. Bezahaf, S. Cassidy, D. Hutchison, D. King, N. Race, and C.  Rotsos. A Model-Driven and Business Approach to Autonomic Network Management.
+\emph{Journal of ICT Standardization}, vol. 9, no. 2, 229-256, \DOI{10.13052/jicts2245-800X.928}.
+\OA
+\\
+~ &
+M. Bezahaf, E. Davies, C. Rotsos and N. Race, To All Intents and Purposes:
+Towards Flexible Intent Expression, \emph{IEEE NetSoft}, pp. 31-37, \DOI{10.1109/NetSoft51509.2021.9492554}.
+\OA
+\\
     \Year{2020}  &
+C. Rotsos, A. Marnerides, A. Magzoub, A. Jindal P. McCherry, M. Bor, J. Vidler,
+D. Hutchison, Ukko: Resilient DRES management for Ancillary Services
+using
+5G service orchestration, \emph{IEEE SmartGridComm}, pp. 1-6, \DOI{10.1109/SmartGridComm47815.2020.9302980}.
+\OA
+    \\
+    ~ & 
     H. Alshaer, N. Uniyal, K. Katsaros, K. Antonakoglou, S. Simpson, H. Abumarshoud,
     H. Falaki, P. McCherry, C. Rotsos, T. Mahmoodi, R. Nejabati, D.
     Kaleshi, D. Hutchison, H. Haas, D. Simeonidou.
     The UK Programmable Fixed and Mobile Internet Infrastructure: Overview,
     capabilities and use cases deployment.
-    \emph{IEEE Access}
+    \emph{IEEE Access}, vol. 8, pp. 175398-175411,
     \DOI{10.1109/ACCESS.2020.3020894}
     \OA
     \\
     ~ &
     N Hart, C Rotsos, V Giotsas, N Race, D Hutchison.
     $\lambda$BGP: Rethinking BGP programmability.
-    \emph{IEEE Network and Management Symposium}
-    \DOI{}
-    \OA
-    \\
-    \Year{2019} &
-    S. Simpson, A. Farshad, P. McCherry, A. Magzoub, W. Fantom, C. Rotsos,
-    N. Race, D. Hutchison.
-    DataPlane Broker: Open WAN control for multi-site service orchestration.
-    \emph{IEEE Conference on Network Function Virtualization and
-    Software-Defined Networks.}
+    \emph{IEEE NOMS}, pp. 1-9,  \DOI{10.1109/NOMS47738.2020.9110331}
     \DOI{}
     \OA
     \\
     \Year{2018} &
-    R Oudin, G Antichi, C Rotsos, AW Moore, S Uhlig.
-    OFLOPS-SUME and the art of switch characterization.
-    \emph{IEEE Journal on Selected Areas in COmmunications}
-    \OA
-    \\
-    ~ &
     C. Rotsos, A. Farshad, D. King, D. Hutchison, Q. Zhou, A.J.G. Gray, C.X.
     Wang, S. McLaughlin.
     ReasoNet: Inferring network policies using ontologies.
-    \emph{IEEE Conference on Network Softwarization}.
+    \emph{IEEE NetSoft},pp. 159-167, \DOI{10.1109/NETSOFT.2018.8460050} 
     \OA
     \\
     \Year{2017} &
     C. Rotsos, D. King, A. Farshad, J. Bird, L. Fawcett, N. Georgalas, M. Gunkel, K. Shiomoto, A. Wang, A. Mauthe, N. Race, D. Hutchison.
     Network service orchestration standardization: A technology survey.
-    \emph{Elsevier Computer Standards \& Interfaces}
+    \emph{Elsevier Computer Standards \& Interfaces}, vol. 54, no. 4,
+pp. 203-215, \DOI{10.1016/j.csi.2016.12.006}
     \OA
     \\
     ~ &
     D King, C Rotsos, I Busi, F Zhang, N Georgalas.
     Transport Northbound Interface: The Need for Specification and Standards
     Coordination.
-    \emph{International Conference on Optical Network Design and Modeling.}
+    \emph{International Conference on Optical Network Design and Modeling}, \DOI{10.23919/ONDM.2017.7958527}
     \OA
      \\
      \Year{2016} &
@@ -322,26 +545,67 @@
      Mancuso, J. Crowcroft, A.W. Moore.
      Resolving data center power bill disputes: The energy-performance
      trade-offs of consolidation.
-     \emph{ACM Conference on Future Energy Systems}
+     \emph{ACM e-Energy}, pp. 89-94, \DOI{10.1145/2768510.2770933}
      \OA
      \\
      \Year{2015} &
      N. Zilberman, P.M. Watts, C. Rotsos, A.W. Moore.
      Reconfigurable network systems and software-defined networking.
-     \emph{Proceesings of the IEEE}
+     \emph{Proceesings of the IEEE}, vol. 103, no. 7, pp. 1102-1124, \DOI{10.1109/JPROC.2015.2435732}
      \OA
      \\
      ~ &
      C. Rotsos, G. Antichi, M. Bruyere, P. Owezarski, A.W. Moore.
      OLOPS-Turbo: Testing the next-generation OpenFlow switch.
-     \emph{IEEE ICC}
+     \emph{IEEE ICC}, pp. 5571-5576, \DOI{10.1109/ICC.2015.7249210}
      \OA
      \\
-     \Year{2015} &
-     J.H. Han, P. Mundkur, C. Rotsos, G. Antichi, N. Dave, A.W. Moore, P.G.  Neumann.
-     Blueswitch: Enabling provably consistent configuration of network switches.
-     \emph{ACM/IEEE Symposium on Architectures from Networking and Communications}
-     \OA
+     \Year{2014} &
+     D. Pediaditakis, C. Rotsos, A.W. Moore.
+     Faithful reproduction of network experiments.
+     \emph{ACM/IEEE ANCS}, pp. 41-52, \DOI{10.1145/2658260.2658274}
+     \\
+     \Year{2013} &
+    A. Sathiaseelan, C. Rotsos, C.S. Sriram, D. Trossen,
+    P. Papadimitriou, J. Crowcroft.
+    Virtual public networks.
+    \emph{EWSDN}, pp. 1-6, \DOI{10.1109/EWSDN.2013.7}
+    \\
+    ~ &
+    C. Rotsos, H. Howard, D. Sheets, R. Mortier, A.
+    Madhavapeddy, A. Chaudhry, J. Crowcroft.
+    Lost in the edge: Finding your way with DNSSEC Signposts.
+    \emph{USENIX FOCI}.
+    \\
+    ~ &
+    A. Madhavapeddy, R. Mortier, C. Rotsos, D. Scott,
+    B. Singh, T. Gazagnaire, S. Smith, S. Hand, J. Crowcroft.
+    Unikernels: Library operating systems for the cloud.
+    \emph{ACM ASPLOS}, pp. 461–472, 
+    \DOI{10.1145/2490301.2451167}
+    \\
+    \Year{2012} &
+    C. Rotsos, R. Mortier, A. Madhavapeddy, B. Singh, A.W. Moore.
+    Cost, performance \& flexibility in openflow: Pick three.
+    \emph{IEEE ICC}, pp. 6601-6605, \DOI{10.1109/ICC.2012.6364690}
+    \\
+    ~ &
+    C. Rotsos, N. Sarrar, S. Uhlig, R. Sherwood, A.W. Moore.
+    OFLOPS: An open framework for OpenFlow switch evaluation.
+    \emph{International Conference on Passive and Active Measurement}. \DOI{10.1007/978-3-642-28537-0\_9}
+    \\
+    ~ &
+    R. Mortier, T. Rodden, T. Lodge, D. McAuley, C. Rotsos,
+    A. W. Moore, A. Koliousis, J. Sventek.
+    Control and understanding: Owning your home network.
+    \emph{COMSNETS}, pp. 1-10, \DOI{10.1109/COMSNETS.2012.6151322}.
+    \\
+    \Year{2011} &
+    C. Rotsos, J. Van Gael, A.W. Moore, Z. Ghahramani.
+    Probabilistic graphical models for semi-supervised traffic classification.
+    \emph{Workshop on Traffic Analysis and Characterization}, 
+    \DOI{10.1145/1815396.1815569}
+    \\
 \end{EntriesTable}
 
 \subsection{Demos \& Posters}
@@ -350,507 +614,274 @@
     \Year{2015} &
     C. Rotsos, G. Antichi, A. W. Moore.
     Enabling Performance Evaluation Beyond 10 Gbps (DEMO).
-    \emph{SIGCOMM 2015}
+    \emph{ACM SIGCOMM}, \DOI{10.1145/2785956.2790036}. 
     \\
     ~ &
     J. H. Han, G. Antichi, N. Zilberman, C. Rotsos, A. W. Moore.
     An integrated environment for open-source network softwarization.
-    \emph{IEEE NetSoft '15}
+    \emph{IEEE NetSoft}, \DOI{10.1109/NETSOFT.2015.7116167}.
     \\
     \Year{2014} &
     C. Rotsos, G. Antichi, M. Bruyere, P. Owezarski, A. W. Moore.
     An open testing framework for next-generation OpenFlow switches (Poster).
-    \emph{EWSDN '14}
+    \emph{EWSDN}, \DOI{10.1109/EWSDN.2014.12}.
     \\
     \Year{2012} &
     A. Chaudhry, A. Madhavapeddy, C. Rotsos, R. Mortier, A. Aucinas, J. Crowcroft, S. Probst Eide, S. Hand, A. W. Moore, N, Vallina-Rodriguez.
     Signposts: end-­to-­end networking in a world of middleboxes (DEMO).
-    \emph{SIGCOMM '12}
+    \emph{ACM SIGCOMM}, \DOI{10.1145/2377677.2377692}.
     \\
     \Year{2011} &
     R. Mortier, B. Bedwell, K. Glover, T. Lodge, T. Rodden, C. Rotsos, A. W. Moore, A. Koliousis, J. Sventek.
     Supporting novel home network management interfaces with OpenFlow and NOX.
-    \emph{SIGCOMM '11}
+    \emph{ACM SIGCOMM }, \DOI{10.1145/2018436.2018523}.
+\end{EntriesTable}
+
+\subsection{Awards \& Honors}
+
+\begin{EntriesTable}
+   \Year{2013}  &
+    Best-paper award, ``Unikernels: library operating systems for the cloud''
+    \newline
+    European Network on High Performance and Embedded Architecture and Compilation.
 \end{EntriesTable}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Open-source Software}
-
-\begin{EntriesTable}
-  \Duration{2012}{\Ongoing} &
-  \textbf{OFLOPS}
-  --
-  \href{https://github.com/oflops-nf/oflops-sume}{github.com/oflops-nf/oflops-sume}
-  \newline
-  A benchmarking suite for OpenFlow switches.
-  \newline
-  \textit{Creator and core developer}.
-  \\
-  \Duration{2014}{2018} &
-  \textbf{Mirage Unikernel OS}
-  --
-  \href{https://www.mirage.org}{www.mirage.org}
-  \newline
-  An OCaml Unikernel OS project.
-  \newline
-  \textit{OpenFlow extension developer}.
-  \\
-  \Duration{2017}{\Ongoing} &
-  \textbf{SELENA}
-  --
-  \href{http://selena-project.github.io/}{selena-project.github.io}
-  \newline
-  A network emulation platform providing time dilation capabilities to improve
-    experimentation scalability and fidelity.
-  \newline
-  \textit{Creator and main developer}.
-\end{EntriesTable}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Teaching}
 
-\subsection{Undergraduate}
+\subsection{Undergraduate Modules}
 
 \begin{EntriesTable}
    \Duration{2017}{\Ongoing}  &
-   SCC365: Advanced Networking
-    \newline
-    Teaching research topic on computer network systems.
-    \newline
-    Module convenor (2017-2020), extensive coursework and module re-design.
-    \newline
-    \LUSCC, \LU
+   SCC365: Advanced Networking. \LUSCC. \newline
+Research-informed Y3 optional module on computer network systems (20-60
+students). \newline
+Contribution: I deliver 5 lectures and lead all lab sessions. I was the module
+convenor between 2017-2020. I Organize invited industry talks (BT, BBC, Google).\newline
+Design \& Development: I redesigned the module structure in 2017 and aligned it
+with the latest network research advancements. I developed a new 
+lab and coursework framework in 2019, to improve repeatability and
+user-friendliness, in response to student feedback.
     \\
     \Duration{2016}{\Ongoing} &
-    SCC.150: Digital Systems.
+    SCC.150: Digital Systems. \LUSCC.
     \newline
-    Introduction to Assembly programming, C programming and debugging.
+Introductory Y1 module on Computer Architecture, Assembly programming, and
+debugging (150-400 students).
     \newline
-    Module convenor (2020), coursework re-desing.
-    \newline
-    \textit{\LUSCC, \LU}
+Contribution: I deliver all lectures between weeks 8 and 25, overlook lab organization and
+manage 2 STAs. I am the
+Module convenor since 2020.\newline
+Design \& Development: I developed automated marking tools to
+support coursework marking and cope with student number increases. 
+I update annually the module structure to improve student engagement and improve
+engagement. I developed a blended learning format for SCC.150 lectures during
+the COVID pandemic, to improve student online engagement.   
 \end{EntriesTable}
 
 
-\subsection{Workshops \& Short Courses}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{P\lowercase{h}D supervision}
 
 \begin{EntriesTable}
+    \Duration{2019}{\Ongoing} &
+    P. Alcock (Part-time) - \LUSCC
+    \newline
+    Multi-domain intent-based networking (Other Advisors: N. Race)
+    \\
+    \Duration{2019}{\Ongoing} &
+    A. Magzoub (Part-time) - \LUSCC
+    \newline
+    Autonomic Networking: A knowledge-plane approach (Other Advisors: D. Hutchison)
+    \\
+    \Duration{2019}{\Ongoing} &
+    A. Althobaiti (thesis submission by 1/2023) - \LUSCC
+    \newline
+    AI-based Energy theft detection (Other Advisors: A. Marnerides)
+    \\
+    \Duration{2019}{\Ongoing} &
+    L. Hill - \LUSCC
+    \newline
+    Resilient networked systems using VNF (Other Advisors: D. Hutchison)
+    \\
+    \Duration {2018}{\Ongoing} &
+    W. Fantom (Part-time) - \LUSCC
+    \newline
+    Network DevOps (Other Advisors: N. Race)
+    \\
+\Duration{2017}{\Ongoing}  &
+  A. Jung (thesis submission by 1/2023) - \LUSCC
+  \newline
+  Cross-layer VM optimization (Other Advisors: D. Hutchison)
+    \\
+    \Duration{2017}{\Ongoing} &
+    N. Hart (co-Advising) - \LUSCC
+    \newline
+    Programmable BGP (Other Advisors: D. Hutchison, N. Race)
+\end{EntriesTable}
+
+\subsection{Master Supervision}
+
+\begin{EntriesTable}
+
+\Duration{2021}{2022}  &
+    R. Mathur, D. Pearce (MSci), A. Manzoor, W. Huang (MSc Sec)
+\\
+\Duration{2020}{2021}  &
+E. Coterall, A. Piperides (MSci), D. Kantharow, R.
+Ferguson  (MSc Sec)
+\\
+\Duration{2019}{2020}  &
+    J. Hymes (MSci), R. Yates (MSc Data
+    Science)
+\\
+\Duration{2018}{2019}  &
+    N. Rutherford (MSci), A. Haseeb (MSc Data Science)
+\\
+\Duration{2017}{2018}  &
+    A. Mofet (MSc Data Science)
+
+
+\end{EntriesTable}
+
+\subsection{PhD Examiner}
+\begin{EntriesList}
+    
+Rafael Silva Guimarães -- ``Cross-layer programmability for expressive and agile
+orchestration across heterogeneous resources'', External Examiner, Universidade Federal do Espírito Santo, 06/2021. \\
+Jon Vidler -- ``Non-Linear Process Communication'', Internal Examiner, Lancaster
+University, 2/2020. \\
+Cornelius Toh Dong Tou -- ``Indoor positioning using semi-supervised fingerprint
+building technique, based on crowd-sourced information'', External Examiner.
+Sunway University, 3/2019.
+
+\end{EntriesList}
+
+
+\section{Engagement}
+
+\subsection{Campus Administrative roles}
+
+\begin{EntriesTable}
+     \Duration{2022}{\Ongoing} & Part-I Tutor, \LUSCC. \newline
+Part-I plagiarism officer. Engge with students Reps and interface them with
+Part-I module teaching teams. \\
+\Duration{2018}{2020} & Departmental committee on Wellbeing, \LUSCC.  \newline
+Developed the post profile. Created online resources and organized workshops on
+student wellbeing (exam support, coping with stress, signpost students to
+university services.).\\
+    \Duration{2018}{2021} & Part-I exam office, Part-II re-sit officer.\newline 
+Developed an internal exam paper moderation mechanism to improve Part-I quality
+assurance. Developed an SCC plan to ensure successful  exam
+delivery, during COVID lockdowns. Developed online material and workshops on
+digital marking.  \\
+\Duration{2018}{\Ongoing} & Postgraduate Research committee member (Networking
+group). \newline
+I have organized annual meetings and offered research advice for more than 10
+SCC PhD students.  \\
+     \Duration{2017}{2018} & LU-Goenka SCC scheme director.  \newline
+Represented SCC in progression boards. Reviewed annual ATP reports and provided input
+to the SCC teaching committee.  
+     \end{EntriesTable}
+
+\subsection{Campus Workshops \& Short Courses Organization}
+
+\begin{EntriesTable}
+    \Year{2022}  &
+    Welcome week lecture series: Welcome Week introduction to Part-I students. 
+    \textit{\LUSCC, \LU}
+    \\
     \Year{2019}  &
-   Student wellbeing.
-    \newline
-    Series of lectures on metal wellbeing for UG students.
-    \newline
+   Student wellbeing: Lecture series on mental wellbeing for UG students.
     \textit{\LUSCC, \LU}
     \\
     \Year{2018} &
-    Introduction to research (networking group seminar series).
-    \newline
-    Series of introduction lectures on netrwork and systems research
+    Networking group seminar series: Lecture series on netrwork and systems research
     methodologies.
-    \newline
     \textit{\LUSCC, \LU}
 
 \end{EntriesTable}
 
-\subsection{Committees \& Administrative roles}
+\subsection{Business Collaborations}
 
 \begin{EntriesTable}
-     \Duration{2018}{\Ongoing} &
-     Departmental committee on Wellbeing, \LUSCC.
-     \\
+    \Duration{2019}{\Ongoing} &
+    Intent-based network management and automation, {\it with BT}. \newline
+Collaborate with BT Digital Infrastructure and BT Global to develop several Proof-of-Concept
+demonstrators for network automation, based on intent-based management
+technologies. 
+    \\
     \Duration{2018}{\Ongoing} &
-     Part-I exam office, Part-II re-sit officer.
-     \\
-     \Duration{2018}{\Ongoing} &
-     Postgraduate Research comittee member (Networking group).
-     \\
-     \Duration{2017}{2018} &
-     LU-Goenka SCC scheme director.
-\end{EntriesTable}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Student supervision}
-
-\subsection{P\lowercase{h}D}
-
-\begin{EntriesTable}
-    \Duration{2019}{\Ongoing} &
-    Abubakr Magzoub (Part-time - Co-Advising)
-    \newline
-    \LU, UK
-    \newline
-    Advisor: David Hutchison
-    \\
-    \Duration{2019}{\Ongoing} &
-    Ahlam Althobaiti (co-Advising)
-    \newline
-    \LU, UK
-    \newline
-    Advisor: Angelos Marnerides
-    \\
-    \Duration{2019}{\Ongoing} &
-    Lyn Hill (co-Adivising)
-    \newline
-    \LU, UK
-    \newline
-    Advisor: David Hutchison
-    \\
-    \Duration {2018}{\Ongoing} &
-    Willian Fantom (co-Advising)
-    \newline
-    \LU, UK
-    \newline
-    Advisor: Nicholas Race
-    \\
-\Duration{2017}{\Ongoing}  &
-  Alexander Jung (co-Advising)
-  \newline
-  \LU, UK
-  \newline
-  Advisor: David Hutchison
-    \\
+    Wayfinder: cross-layer cloud optimization {\it with Unikraft}. \newline
+Develop an open platform that use AI/ML techniques to discover
+the optimal configuration (OS and application) for a cloud virtual machine, with
+minimal user input. \\
+    \Duration{2018}{\Ongoing} &
+Ukmon: lightweight network monitoring infrastructure using unikernels {\it with
+NEC Europe}. \newline
+Develop an energy-efficient service-oriented network monitoring service using
+unikernel-based network probes. \\
     \Duration{2017}{\Ongoing} &
-    Nicholas Hart (co-Advising)
-    \newline
-    \LU, UK
-    \newline
-    Advisor: David Hutchison, Nicholas Race
+    MvCDN: Shared edge-based CDN service architecture.
+    Infrastructures {\it with BT and BBC}\newline
+Design and deploy an edge-based video-delivery service for BBC live streams in
+the BT production network. The service is currently operational in a local
+telephony exchange in London and serves live BBC content to more than  100 BT customers.
+    \\
 \end{EntriesTable}
 
-\subsection{Master's}
+
+\subsection{Public \& Community Presentations}
 
 \begin{EntriesTable}
-\Duration{2019}{2020}  &
-    James Hymes (MSci), Rebecca Yates (MSc Data
-    Science)
-  \newline
-  \LU, UK.
-\\
-\Duration{2018}{2019}  &
-    Nathan Rutherford (MSci), Ammar Haseeb (MSc Data Science)
-  \newline
-  \LU, UK.
-\\
-\Duration{2017}{2018}  &
-    Alex Mofet (MSc Data Science)
-  \newline
-  \LU, UK.
-
-
-\end{EntriesTable}
-
-% \subsection{Undergraduate}
-%
-% \begin{EntriesTable}
-% \Duration{2020}{2021}  &
-%   Majed M.A. Abura, Ali A.A. Alhazmi, Daniel P. Gilbert, and Mustafa M.M.
-%   Alordowny
-%   \newline
-%   \LU, UK.
-%   \\
-% \Duration{2019}{2020}  &
-%   Lottie Cooper, Steven Heer, Charles Thomson, and Alexander Borges
-%   \newline
-%   \LU, UK.
-%   \\
-% \end{EntriesTable}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Presentations}
-
-\begin{EntriesTable}
+    \Year{2022} & N. Race, \Me, S. Cassidy,  \emph{Spotlight on the future of networks II}.  Organize an NG-CDI expo event at BT Adastral Park.
+    \\
+    ~ & N. Race, \Me, S. Cassidy,  \emph{Spotlight on the future of networks}.  
+    Organized an open online event to promote the finding of the NG-CDI project to BT stakeholders.
+    \\
+ ~ & 
+    \Me, 
+    Intent-driven network testing and monitoring.
+    \emph{BT Thought Leadership series on Next Generation Converged Digital Infrastructure}
+    \\
+   ~ & 
+    \Me.
+    Assured Automation with ​ Network Testing \& Monitoring.
+    \emph{Software-isation: The Challenges of Software Quality for ICT Intense Industries – Refining the Research Focus -- UK5G Showcase}
+    \\
     \Year{2020} &
-    Ning Wang, \Me.
+    N. Wang, \Me.
     Intent-Based Networking.
     \emph{BT Thought Leadership series on Next Generation Converged Digital Infrastructure}
     \\
     \Year{2019} &
-    S. Simpson, P. Mccherry, A. Magzoub, A. Farshad, \Me
-    A WIM Plugin for DataPlane Broker (DPB) (Demo).
-    \emph{7th OSM hackfest.}
+    S. Simpson, P. Mccherry, A. Magzoub, A. Farshad, \Me \xspace
+    A WIM Plugin for DataPlane Broker (DPB) (PoC Demo).
+    \emph{7th OSM hackfest},
     Patras, Greece.
     \\
     \Year{2018} &
-    \Me.
+    \Me ,
     Resilient service orchestration.
     \emph{TOUCAN Industrial Schowcase}
     London, UK.
     \\
     \Year{2015} &
-    N. Zilberman, G. Antichi, \Me.
+    N. Zilberman, G. Antichi, \Me ,
     Open Hardware Networking - Tutorial.
     \emph{SIGCOMM 2015}
     Imperial College London, UK.
     \\
     ~ &
-    N. Zilberman, G. Antichi, \Me.
+    N. Zilberman, G. Antichi, \Me,
     Open Source Networking - Tutorial.
     \emph{Netsoft 2015}
     University College London, UK.
-
-%\Year{\Future}  &
-  %\Invited{}
-  %\Me.
-  %Geophysical research powered by open-source,
-  %\emph{Christian-Albrechts-Universität zu Kiel},
-  %Kiel, Germany.
-  %\\
-% \Year{2020}  &
-%   \Invited{}
-%   \Me.
-%   Geophysical research powered by open-source,
-%   \emph{Christian-Albrechts-Universität zu Kiel},
-%   Kiel, Germany.
-%   \\
-%   ~ &
-%   \Invited{}
-%   \Me.
-%   Geophysical research powered by open-source,
-%   \emph{Departamento de Geofísica, IAG, Universidade de São Paulo},
-%   São Paulo, Brazil.
-%   \href{https://www.leouieda.com/2020-06-18-usp}{leouieda.com/2020-06-18-usp}.
-%   \Youtube{VqI8BX1Yg54}.
-%   \\
-%   ~ &
-%   \Invited{}
-%   \Me.
-%   Geophysical research powered by open-source,
-%   \emph{Technische Universität Bergakademie Freiberg},
-%   Freiberg, Germany.
-%   \href{https://www.leouieda.com/2020-06-04-freiberg}{leouieda.com/2020-06-04-freiberg}.
-%   \\
-%   ~ &
-%   \Me, \Santiago.
-%   Evaluating the accuracy of equivalent-source predictions using
-%   cross-validation,
-%   \emph{EGU 2020},
-%   Vienna, Austria.
-%   \DOI{10.5194/egusphere-egu2020-15729}.
-%   \DOI{10.6084/m9.figshare.12245372}.
-%   \\
-%   ~ &
-%   \Invited{}
-%   \Me.
-%   Geophysical research powered by open-source,
-%   \emph{Geographic Data Science Lab, University of Liverpool},
-%   Liverpool, UK.
-%   \href{https://www.leouieda.com/liverpool-gdsl-2020}{leouieda.com/liverpool-gdsl-2020}.
-%   \\
-% \Year{2019}  &
-%   \Me, \Paul.
-%   PyGMT: Accessing the Generic Mapping Tools from Python,
-%   \emph{AGU 2019},
-%   San Francisco, USA.
-%   \DOI{10.6084/m9.figshare.11320280}.
-%   \\
-%   ~ &
-%   \Me.
-%   Building the foundations for open-source geophysics,
-%   \emph{\LIVEARTH, \LIV},
-%   UK.
-%   \DOI{10.6084/m9.figshare.10255832}.
-%   \\
-% \Year{2018}  &
-%   \Me, \Eric, \Paul, \David.
-%   Coupled Interpolation of Three-component GPS Velocities,
-%   \emph{AGU 2018},
-%   Washington DC, USA.
-%   \DOI{10.6084/m9.figshare.7440683}.
-%   \\
-%   ~ &
-%   \Me.
-%   Machine Learning Lessons for Geophysics,
-%   \emph{Department of Earth Sciences, \UHM},
-%   Honolulu, USA.
-%   \DOI{10.6084/m9.figshare.7203344}.
-%   \\
-%   ~ &
-%   \Me, \Paul.
-%   Building an object-oriented Python interface for the Generic Mapping Tools,
-%   \emph{Scipy 2018},
-%   Austin, USA.
-%   \DOI{10.6084/m9.figshare.6814052}.
-%   \Youtube{6wMtfZXfTRM}
-%   \\
-%   ~ &
-%   \Me, \David, \Paul.
-%   Joint Interpolation of 3-component GPS Velocities Constrained by
-%   Elasticity,
-%   \emph{AOGS $15^{th}$ Annual Meeting},
-%   Honolulu, USA.
-%   \DOI{10.6084/m9.figshare.6387467}.
-%   \\
-%   ~ &
-%   \Me, \Paul.
-%   Integrating the Generic Mapping Tools with the Scientific Python Ecosystem,
-%   \emph{AOGS $15^{th}$ Annual Meeting},
-%   Honolulu, USA.
-%   \DOI{10.6084/m9.figshare.6399944}.
-%   \\
-% \Year{2017}  &
-%   \Invited{}
-%   \Me, \Paul.
-%   Nurturing reliable and robust open-source scientific software,
-%   \emph{AGU Fall Meeting 2017},
-%   New Orleans, USA.
-%   \Youtube{0GO4ZZ5Ry6M}
-%   \\
-%   ~  &
-%   \Me, \Paul.
-%   A modern Python interface for the Generic Mapping Tools,
-%   \emph{AGU Fall Meeting 2017},
-%   New Orleans, USA.
-%   \DOI{10.6084/m9.figshare.5662411}.
-%   \\
-%   ~  &
-%   \Me, \Paul.
-%   Bringing the Generic Mapping Tools to Python,
-%   \emph{Scipy 2017},
-%   Austin, USA.
-%   \DOI{10.6084/m9.figshare.7635833}.
-%   \Youtube{93M4How7R24}
-%   \\
-%   ~ &
-%   \Me.
-%   Inverting gravity to map the Moho: A new method and the open source
-%   software that made it possible,
-%   \emph{Department of Geology and Geophysics, \UHM},
-%   Honolulu, USA.
-%   \DOI{10.6084/m9.figshare.4779766}.
-%   \\
-% \Year{2016}  &
-%   \Invited{}
-%   \Me.
-%   Fatiando a Terra: construindo uma base para ensino e pesquisa de geofísica,
-%   \emph{Observatório Nacional},
-%   Rio de Janeiro, Brazil.
-%   \\
-% \Year{2015}  &
-%   \Invited{}
-%   \Me.
-%   Fatiando a Terra: construindo uma base para ensino e pesquisa de geofísica,
-%   \emph{Universidade de São Paulo},
-%   São Paulo, Brazil.
-%   \DOI{10.6084/m9.figshare.1381870}.
-%   \\
-% \Year{2014}  &
-%   \Me, \Bi, \Val.
-%   Using Fatiando a Terra to solve inverse problems in geophysics,
-%   \emph{Scipy 2014},
-%   Austin, USA.
-%   \DOI{10.6084/m9.figshare.1089987}.
-%   \\
-%   ~ &
-%   \Me, \Val.
-%   Gravity inversion in spherical coordinates using tesseroids,
-%   \emph{EGU General Assembly 2014},
-%   Vienna, Austria.
-%   \DOI{10.6084/m9.figshare.1155457}.
-%   \\
-% \Year{2013}  &
-%   \Me, \Bi, \Val.
-%   Modeling the Earth with Fatiando a Terra,
-%   \emph{Scipy 2013},
-%   Austin, USA.
-%   \DOI{10.25080/Majora-8b375195-010}.
-%   \Youtube{Ec38h1oB8cc}
-%   \\
-%   ~ &
-%   \Me, \Val.
-%   3D magnetic inversion by planting anomalous densities,
-%   \emph{AGU Meeting of the Americas},
-%   Cancun, Mexico.
-%   \DOI{10.6084/m9.figshare.703651}.
-%   \\
-% \Year{2012}  &
-%   \Dio, \Me, \YLi, \Val, \BragaVale, \Angeli, \Peres.
-%   Iron ore interpretation using gravity-gradient inversions in the Carajás,
-%   Brazil,
-%   \emph{SEG Annual Meeting 2012},
-%   Las Vegas, USA.
-%   \DOI{10.6084/m9.figshare.156865}.
-%   \\
-%   ~ &
-%   \Me, \Val.
-%   Use of the ``shape-of-anomaly'' data misfit in 3D inversion by planting
-%   anomalous densities,
-%   \emph{SEG Annual Meeting 2012},
-%   Las Vegas, USA.
-%   \DOI{10.6084/m9.figshare.156864}.
-%   \\
-%   ~ &
-%   \Me, \Val.
-%   Rapid 3D inversion of gravity and gravity gradient data to test geologic
-%   hypotheses,
-%   \emph{International Symposium on Gravity, Geoid and Height Systems},
-%   Venice, Italy.
-%   \DOI{10.6084/m9.figshare.156859}.
-%   \\
-% \Year{2011}  &
-%   \Me, \Val.
-%   Robust 3D gravity gradient inversion by planting anomalous densities,
-%   \emph{SEG Annual Meeting 2011},
-%   San Antonio, USA.
-%   \DOI{10.6084/m9.figshare.156863}.
-%   \\
-%   ~ &
-%   \Me, \Val.
-%   3D gravity inversion by planting anomalous densities,
-%   \emph{Internation Congress of the Brazilian Geophysical Society},
-%   Rio de Janeiro, Brazil.
-%   \DOI{10.6084/m9.figshare.156861}.
-%   \\
-%   ~ &
-%   \Me, \Everton, \Carla, \Eder.
-%   Optimal forward calculation method of the Marussi tensor due to a geologic
-%   structure at GOCE height,
-%   \emph{4th International GOCE User Workshop},
-%   Munich, Germany.
-%   \DOI{10.6084/m9.figshare.92624}.
-%   \\
-%   ~ &
-%   \Me, \Val.
-%   3D gravity gradient inversion by planting density anomalies,
-%   \emph{73th EAGE Conference and Exhibition incorporating SPE EUROPEC},
-%   Vienna, Austria.
-%   \DOI{10.6084/m9.figshare.91511}.
-%   \\
-% \Year{2010}  &
-%   \Me, \Naomi, \Carla.
-%   Computation of the gravity gradient tensor due to topographic masses using
-%   tesseroids,
-%   \emph{AGU Meeting of the Americas},
-%   Foz do Iguaçu, Brazil.
-%   \DOI{10.6084/m9.figshare.156858}.
-%   \\
-% \Year{2008}  &
-%   \Me, \Naomi.
-%   Utilização de tesseróides na modelagem de dados de gradiometria
-%   gravimétrica,
-%   \emph{XIII Simpósio de Iniciação Científica do IAG-USP},
-%   São Paulo, Brazil.
-%   \DOI{10.6084/m9.figshare.4779760}.
-%   \\
-% \Year{2006}  &
-%   \Me, \Manoel.
-%   Paleomagnetismo e mineralogia magnética dos diques cambrianos de Maravilhas
-%   e Prata (PB),
-%   \emph{XI Simpósio de Iniciação Científica do IAG/USP},
-%   São Paulo, Brazil.
-%   \DOI{10.6084/m9.figshare.4779769}.
 \end{EntriesTable}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Academic Service \& Affiliations}
-
-% \subsection{Editor}
-%
-% \begin{EntriesTable}
-%   \Duration{2019}{\Ongoing} & Topic editor for the \textit{Journal of Open Source Software}
-% \end{EntriesTable}
-%
 \subsection{Reviewer}
 IEEE Infocom (2020)
 
@@ -868,5 +899,66 @@ IEEE Communications Letters
 
 IEEE Transactions on Network Service and Management
 
+
+\subsection{Standardization}
+Member of the Autonomous Network group, TeleManagement Forum (TMF). Responsibilities:
+\indent {\it Network intent modeling, network automation standardization.}\\
+
+Member of the European Telecommunications Standards Institute (ETSI) Network
+Function Virtualization (NFV) Special Interest Group. Responsibilities:
+\indent {\it PoC development, orchestration model design.} \\
+
+\subsection{Open-Source Tools and Projects}
+
+\begin{EntriesTable}
+
+  \Duration{2020}{\Ongoing} &
+  \textbf{Unikraft}
+  --
+  \href{https://github.com/unikraft}{github.com/unikraft}
+  \newline
+  A modular unikernel OS project, \textit{Responsibilities: Maintain monitoring appliances}.
+  \\
+
+  \Duration{2018}{\Ongoing} &
+  \textbf{Data Plane Broker}
+  --
+  \href{https://github.com/DataPlaneBroker}{github.com/DataPlaneBroker}
+  \newline
+  A WAN management platform, \textit{Responsibilities: OSM Driver maintainer}.
+  \\
+
+   \Duration{2012}{\Ongoing} &
+  \textbf{OFLOPS}
+  --
+  \href{https://github.com/oflops-nf/oflops-sume}{github.com/oflops-nf/oflops-sume}
+  \newline
+  A hardware OpenFlow switch benchmark platform.
+  \textit{Responsibilities: Core developer}.
+  \\
+  \Duration{2014}{2018} &
+  \textbf{Mirage Unikernel OS}
+  --
+  \href{https://www.mirage.org}{www.mirage.org}
+  \newline
+  An OCaml Unikernel OS project,
+  \textit{Responsibilities: OpenFlow support developer}.
+ \end{EntriesTable}
+
+\section{Other Information - Feedback Evaluation}
+
+\begin{table}[h]
+\begin{tabular}{|c|c|c|c|}
+\hline
+Module & 2019-2020 & 2020-2021 & 2021-2022 \\
+\hline
+SCC.150 & 3.52 (response: 8\%) & 3.97 (response: 16\%) & 3.52 (response: 10\%) \\
+\hline
+SCC.365 & 4.30 (response: 22\%) & 3.86 (response: 12\%) & 4.00 (response: 18\%) \\
+\hline
+\end{tabular}
+\caption{Overall student satisfaction and response rate for SCC.150 and SCC.365
+modules for the last three academic years.}
+\end{table}
 
 \end{document}
